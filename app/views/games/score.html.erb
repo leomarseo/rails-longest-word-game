@@ -2,18 +2,22 @@
   <h2>Your grid</h2>
 
   <div class="letters-container">
-    <% @grid.split.each do |letter| %>
-
-    <div class="letter"><%= letter.upcase %></div>
-
-    <% end %>
-  </div>
+    <% @grid.each do |letter|
+      if @attempt.include?(letter)
+        @attempt.delete_at(@attempt.index(letter)) %>
+        <div class="letter-used"><%= letter.upcase %></div>
+  <% else %>
+        <div class="letter"><%= letter.upcase %></div>
+  <% end %>
+  <% end %>
+</div>
 
   <h3>It took you <%= @time_taken %> seconds to guess:</h3>
 
   <div class="letters-container">
     <% @suggestion.split('').each do |letter| %>
-      <% if @grid.split.include?(letter.downcase) %>
+      <% if @grid.include?(letter.downcase)
+        @grid.delete_at(@grid.index(letter)) %>
         <div class="attempt-letter"><%= letter.upcase %></div>
       <% else %>
         <div class="attempt-letter-wrong"><%= letter.upcase %></div>
@@ -94,8 +98,9 @@
       </div>
   <% end %>
 
+  <br>
 
-  <div id="btn-play"><%= link_to "Play again", 'new' %></div>
+  <%= link_to "Play again", 'new', id: "btn-play" %>
 
 
 </div>

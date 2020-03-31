@@ -9,7 +9,8 @@ class GamesController < ApplicationController
 
   def score
     @suggestion = params[:suggestion]
-    @grid = params[:grid]
+    @attempt = @suggestion.split('')
+    @grid = params[:grid].split
     @time_taken = calculate_seconds(params[:time])
     result = calculate_result(@suggestion, @grid, @time_taken)
     @score = result[:score]
@@ -37,7 +38,7 @@ class GamesController < ApplicationController
   def incorrect_letters?(attempt, grid)
     grid_hash = Hash.new(0)
     ('a'..'z').to_a.each { |letter| grid_hash[letter] = 0 }
-    grid.split('').each { |letter| grid_hash[letter.downcase] += 1 }
+    grid.each { |letter| grid_hash[letter.downcase] += 1 }
     attempt.chars.each { |char| grid_hash[char.downcase] -= 1 }
     grid_hash.values.any?(&:negative?)
   end
