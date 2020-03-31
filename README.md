@@ -6,4 +6,4 @@ It's a simple game where you are asked to formulate an english word from some gi
 
 To run it locally, type "rails s" in the console and go to http://localhost:3000/new
 
-![]preview.gif
+![](preview.gif)
