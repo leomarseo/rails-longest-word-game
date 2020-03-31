@@ -1,24 +1,9 @@
-# README
+## Longest Word Game
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the first Rails app I developed during my 5th week of Le Wagon coding bootcamp.
 
-Things you may want to cover:
+It's a simple game where you are asked to formulate an english word from some given letters.
 
-* Ruby version
+To run it locally, type "rails s" in the console and go to http://localhost:3000/new
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![]preview.gif
