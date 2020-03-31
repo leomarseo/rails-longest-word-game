@@ -59,12 +59,26 @@
   padding: 8px;
 }
 
+#btn-play:hover {
+  cursor: pointer;
+  background-color: rgba(220,220,220,0.7);
+  border-color: white;
+}
+
 #btn-send {
   border-radius: 16px;
   border: 1px solid #3e4a5b;
   width: 100px;
   margin: 16px auto;
   padding: 8px;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 18px;
+}
+
+#btn-send:hover {
+  cursor: pointer;
+  background-color: rgba(220,220,220,0.7);
+  border-color: white;
 }
 
 #suggestion {
