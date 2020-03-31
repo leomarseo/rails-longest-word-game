@@ -1,0 +1,101 @@
+<div class="grid-container">
+  <h2>Your grid</h2>
+
+  <div class="letters-container">
+    <% @grid.split.each do |letter| %>
+
+    <div class="letter"><%= letter.upcase %></div>
+
+    <% end %>
+  </div>
+
+  <h3>It took you <%= @time_taken %> seconds to guess:</h3>
+
+  <div class="letters-container">
+    <% @suggestion.split('').each do |letter| %>
+      <% if @grid.split.include?(letter.downcase) %>
+        <div class="attempt-letter"><%= letter.upcase %></div>
+      <% else %>
+        <div class="attempt-letter-wrong"><%= letter.upcase %></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% case @message
+       when 0 %>
+      <p>Unfortunately, <strong><%= @suggestion.capitalize %></strong> cannot be built out of this grid</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    <% when 1 %>
+      <p>Unfortunately, <strong><%= @suggestion.capitalize %></strong> is not an english word</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    <% when 2 %>
+      <p><strong><%= @suggestion.capitalize %></strong> is an english word, but it took you so long that result is negative..</p>
+        <p class="score">Your score: <%= @score %></p>
+        <div class="stars">
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+    <% when 3 %>
+      <p><strong><%= @suggestion.capitalize %></strong> is ok, but your result is barely positive..</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    <% when 4 %>
+      <p>Well done! <strong><%= @suggestion.capitalize %></strong> is a decent word</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    <% when 5 %>
+      <p>Great job! <strong><%= @suggestion.capitalize %></strong> is a very good word</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    <% when 6 %>
+      <p>Amazing job! <strong><%= @suggestion.capitalize %></strong> puts you among the best!</p>
+      <p class="score">Your score: <%= @score %></p>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+  <% end %>
+
+
+  <div id="btn-play"><%= link_to "Play again", 'new' %></div>
+
+
+</div>

@@ -1,0 +1,69 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.grid-container {
+  width: 70vw;
+  margin: 15vw auto;
+  border: 1px solid black;
+  padding: 5vh 24px;
+  border-radius: 16px;
+}
+
+.letters-container {
+  width: 100%;
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.letter {
+  background-color: #e1edc6;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 2px;
+  font-size: 5vw;
+}
+
+.attempt-letter {
+  background-color: #e1edc6;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 2px;
+}
+
+.attempt-letter-wrong {
+  background-color: #FF8080;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 2px;
+}
+
+.stars i {
+  font-size: 36px;
+  margin: 10px auto;
+}
+
+#btn-play {
+  border-radius: 16px;
+  border: 1px solid #3e4a5b;
+  width: 100px;
+  margin: 16px auto;
+  padding: 8px;
+}
+
+#btn-send {
+  border-radius: 16px;
+  border: 1px solid #3e4a5b;
+  width: 100px;
+  margin: 16px auto;
+  padding: 8px;
+}
+
+#suggestion {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 24px;
+  text-align: center
+}

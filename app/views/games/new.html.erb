@@ -1,0 +1,24 @@
+<div class="grid-container">
+  <h1>Longest Word Game</h1>
+
+  <div class="letters-container">
+    <% @grid.each do |letter| %>
+
+    <div class="letter"><%= letter.upcase %></div>
+
+    <% end %>
+  </div>
+
+  <div class="input-bar">
+    <form action="score" method="POST" autocomplete="off">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <h2>What is the longest word you can find?</h2>
+      <input type="text" placeholder="your word.." name="suggestion" id="suggestion">
+      <%= hidden_field_tag :grid, @grid %>
+      <%= hidden_field_tag :time, @time %>
+      <br>
+      <input id="btn-send" type="submit" value="Send">
+    </form>
+
+  </div>
+</div>
